@@ -8,12 +8,6 @@ The goal is to uncover insights about music trends, artist performance, and the 
 The dataset comes from Kaggle:  
 [Spotify Popularity Songs Dataset](https://www.kaggle.com/datasets/ahmadrazakashif/spotify-popularity-songs/data)
 
-According to the dataset description:
-- It contains information about **1,048 tracks**.  
-- Tracks are enriched with metadata from **Spotify, Apple Music, Deezer, and Shazam**.  
-- The dataset is designed to analyze **popularity trends across streaming services**, not just raw audio features.  
-- The audio attributes (danceability, valence, energy, acousticness, etc.) are Spotify-based and widely used in music analytics research.
-
 The dataset includes the following columns:
 
 - `track_name`  
