@@ -28,12 +28,22 @@ The dataset includes the following columns:
 
 ---
 
+## Color Code
+
+- 🔴 = I couldn’t solve it on my own and didn’t find a working solution.
+- 🟡 = My thinking process was on the right track, but I still needed to google or ask GPT for help.
+- 🟢 = I solved it by myself, with only minimal googling or GPT input.
+
 ## Beginner Level
 
-1. Load the dataset and display the first 10 rows. Explore column types (`.info()` and `.describe()`).
-2. Count how many unique artists are in the dataset.
-3. Find the most common release year for tracks.
-4. Plot a histogram of `streams`. Apply a log transformation if the distribution is heavily skewed.
+🟢1. Load the dataset and display the first 10 rows. Explore column types (`.info()` and `.describe()`).
+
+🟢2. Count how many unique artists are in the dataset.
+
+🟡3. Find the most common release year for tracks.
+
+🟡4. Plot a histogram of `streams`. Apply a log transformation if the distribution is heavily skewed.
+
 5. Create a bar plot of the top 10 most frequent keys used in songs.
 
 ---
