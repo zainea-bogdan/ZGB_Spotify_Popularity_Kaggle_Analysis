@@ -12,20 +12,6 @@ The dataset is available on Kaggle:
 To follow along, download the dataset from Kaggle and place the CSV file in a folder named `dataset` at the root of the project.  
 Rename the file to `data1.csv` so it can be easily referenced in the notebooks.
 
-The dataset includes the following columns:
-
-- `track_name`
-- `artist(s)_name`
-- `artist_count`
-- `released_year`, `released_month`, `released_day`
-- `in_spotify_playlists`, `in_spotify_charts`, `streams`
-- `in_apple_playlists`, `in_apple_charts`
-- `in_deezer_playlists`, `in_deezer_charts`
-- `in_shazam_charts`
-- `bpm`, `key`, `mode`
-- `danceability_%`, `valence_%`, `energy_%`
-- `acousticness_%`, `instrumentalness_%`, `liveness_%`, `speechiness_%`
-
 ---
 
 ## Color Code
@@ -34,71 +20,70 @@ The dataset includes the following columns:
 - 🟡 = My thinking process was on the right track, but I still needed to google or ask GPT for help.
 - 🟢 = I solved it by myself, with only minimal googling or GPT input.
 
-## Beginner Level
+---
 
-🟢1. Load the dataset and display the first 10 rows. Explore column types (`.info()` and `.describe()`).
+## Tasks Assigned by Level
 
-🟢2. Count how many unique artists are in the dataset.
+### Level 1 — **Getting to Know the Catalog**
 
-🟡3. Find the most common release year for tracks.
-
-🟡4. Plot a histogram of `streams`. Apply a log transformation if the distribution is heavily skewed.
-
-5. Create a bar plot of the top 10 most frequent keys used in songs.
+1. Load the dataset into a Pandas DataFrame.
+2. Display the first 10 rows (`.head()`) and last 10 rows (`.tail()`).
+3. Use `.info()` to check dtypes and nullability of columns.
+4. Use `.describe()` to get summary statistics of numeric columns.
+5. Check the shape of the dataset with `.shape`.
 
 ---
 
-## Intermediate Level
+### Level 2 — **Picking Out Songs**
 
-6. Find the top 10 tracks with the highest number of Spotify streams.
-7. Compare the average danceability of songs released before 2010 vs after 2010.
-8. Group by `artist(s)_name` and compute the average `energy_%` for their tracks. Plot the top 15 artists.
-9. Find correlations between `bpm`, `energy_%`, `danceability_%`, and `valence_%`. Use a heatmap.
-10. Plot a line chart of the number of songs released per year.
-
----
-
-## Advanced Level
-
-11. Create a scatterplot of `danceability_%` vs `valence_%`, colored by `mode`.
-12. Identify which artists have the highest average streams per track (only consider artists with at least 5 tracks).
-13. Compare how `acousticness_%` differs between the top 10 streamed artists using a boxplot.
-14. Find the most "danceable" year by computing the average `danceability_%` per year.
-15. Analyze seasonal patterns by plotting the number of songs released by month.
+6. List all column names in the dataset.
+7. Select only the `track_name` column.
+8. Select both `track_name` and `artist(s)_name` columns.
+9. Retrieve the first 5 songs released after 2020.
+10. Use `.iloc[]` to display rows 10 to 20.
 
 ---
 
-## Expert Level
+### Level 3 — **Filtering the Playlist**
 
-16. Create a new column `is_popular` = 1 if a track's streams are in the top 10% (instead of 5%, to account for the smaller dataset).  
-    Analyze differences in `bpm` and `energy_%` between popular and non-popular songs.
-17. Use a rolling or expanding window to analyze trends in average `valence_%` across years.
-18. Build a radar (spider) chart comparing audio features (`danceability_%`, `energy_%`, etc.) for 3 selected artists.
-19. Cluster songs using KMeans on audio features (scaled). Visualize clusters with PCA on a 2D scatterplot.  
-    Keep the number of clusters small (e.g., 3–5) given the dataset size.
-20. Predict `mode` (major/minor) using logistic regression on audio features.  
-    Evaluate with accuracy, even though the dataset is small.
+11. Filter songs where `streams` is greater than 1 million.
+12. Filter songs released before the year 2000.
+13. Count how many tracks each artist has using `.value_counts()`.
+14. Find the most common release year (`.mode()` or `.value_counts().idxmax()`).
+15. Filter songs where `mode = 1` (major key).
 
 ---
 
-## Mastery Level
+### Level 4 — **Spotting Trends**
 
-21. Create a dashboard-style visualization showing:
+16. Group by `released_year` and calculate the average `streams`.
+17. Group by `artist(s)_name` and compute the mean `energy_%`.
+18. Find the artist with the highest average streams (minimum 5 tracks).
+19. Compare mean `valence_%` between `mode = 0` and `mode = 1`.
+20. Create a pivot table showing average `danceability_%` per year.
 
-- Top artists by streams
-- Distribution of keys used
-- Trends in releases per year
-- Correlation heatmap of features
+---
 
-22. Identify outliers in `streams` using IQR or Z-score. Plot them separately from the main distribution.
-23. Build a "music fingerprint" profile for each decade (mean audio features). Visualize them with radar plots.
-24. Compare feature distributions (`danceability_%`, `valence_%`, `energy_%`) between songs that appear in Spotify playlists vs songs that do not.
-25. Final storytelling project: Create an end-to-end notebook that answers the question:  
-    **"How has the energy and mood of popular music changed from 2000 to 2025?"**
+### Level 5 — **Cleaning the Sound**
+
+21. Convert the `streams` column from object to integer (handle commas).
+22. Remove rows where `streams` contains non-numeric values.
+23. Rename the column `artist(s)_name` to `artist_name`.
+24. Create a new column `streams_millions` (divide by 1,000,000).
+25. Bin songs into categories (`low`, `medium`, `high`) based on streams.
+
+---
+
+### Level 6 — **Amplifying Insights**
+
+26. Sort songs by `streams` descending and show the top 10.
+27. Plot a histogram of `streams_millions` (try both raw and log scale).
+28. Plot a bar chart of the 10 most common keys.
+29. Create a correlation heatmap of `bpm`, `energy_%`, `danceability_%`, and `valence_%`.
+30. Create a new column `is_popular` = 1 if `streams` is in the top 10%, else 0.
 
 ---
 
 ## Goal
 
-My aim is to practice data exploration, visualization, and basic analysis techniques on a real-world dataset,  
-using **Python** with **Pandas, NumPy, Seaborn, and Matplotlib** as the main libraries.
+My aim is to practice Pandas fundamentals step by step: loading, inspecting, selecting, filtering, aggregating, cleaning, transforming, and visualizing real-world data.
