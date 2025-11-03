@@ -18,7 +18,7 @@ Rename the file to `data1.csv` so it can be easily referenced in the notebooks.
 
 - 🔴 = I couldn’t solve it on my own and didn’t find a working solution.
 - 🟡 = My thinking process was on the right track, but I still needed to google or ask GPT for help.
-- 🟢 = I solved it by myself, with only minimal googling or GPT input.
+- 🟢 = I solved it by myself, with only minimal googling or GPT input if needed.
 
 ---
 
@@ -26,21 +26,21 @@ Rename the file to `data1.csv` so it can be easily referenced in the notebooks.
 
 ### Level 1 — **Getting to Know the Catalog**
 
-1. Load the dataset into a Pandas DataFrame.
-2. Display the first 10 rows (`.head()`) and last 10 rows (`.tail()`).
-3. Use `.info()` to check dtypes and nullability of columns.
-4. Use `.describe()` to get summary statistics of numeric columns.
-5. Check the shape of the dataset with `.shape`.
+1. Load the dataset into a Pandas DataFrame.🟢
+2. Display the first 10 rows (`.head()`) and last 10 rows (`.tail()`).🟢
+3. Use `.info()` to check dtypes and nullability of columns.🟢
+4. Use `.describe()` to get summary statistics of numeric columns.🟢
+5. Check the shape of the dataset with `.shape`.🟢
 
 ---
 
 ### Level 2 — **Picking Out Songs**
 
-6. List all column names in the dataset.
-7. Select only the `track_name` column.
-8. Select both `track_name` and `artist(s)_name` columns.
-9. Retrieve the first 5 songs released after 2020.
-10. Use `.iloc[]` to display rows 10 to 20.
+6. List all column names in the dataset.🟢
+7. Select only the `track_name` column.🟢
+8. Select both `track_name` and `artist(s)_name` columns.🟢
+9. Retrieve the first 5 songs released after 2020.🟡
+10. Use `.iloc[]` to display rows 10 to 20.🟢
 
 ---
 
